@@ -15,18 +15,12 @@ class Solution {
 
             long candiesToBeEatenBefore = (favType == 0) ? 0 : candiesCountPrefixSum[favType - 1];
 
-            // Case 1
-            // if (Candies to be eaten before >= Maximum Candies that I can eat, 
-            // including the candies eaten on my fav day)
-            // Because if candiesToBeEatenBefore < than the max candies that I can eat, 
-            // then I can obviously eat my fav candy because there is still some candy 
-            // capacity left to be filled in my fav day.
+            // Candies before the fav candies are more, so fav candies don't even get a chance to be eaten at our fav day.
             if (candiesToBeEatenBefore >= (favDay + 1) * dailyCap) { 
                 ans[i] = false;
             } 
 
-            // Case 2
-            // Check if all candies of the favorite type would have been consumed before the given day
+            // Candies are less, so all the fav candies are consumed before the fav day.
             else if (candiesCountPrefixSum[favType] < favDay + 1) { 
                 ans[i] = false;
             } else {
