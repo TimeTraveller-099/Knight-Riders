@@ -16,17 +16,21 @@ class Solution {
             long candiesToBeEatenBefore = (favType == 0) ? 0 : candiesCountPrefixSum[favType - 1];
 
             // Candies before the fav candies are more, so fav candies don't even get a chance to be eaten at our fav day.
-            if (candiesToBeEatenBefore >= (favDay + 1) * dailyCap) { 
+            if (candiesToBeEatenBefore >= (favDay + 1) * dailyCap) {
+                ans[i] = false;
+            } 
+                
+            // Candies are less, so all the fav candies are consumed before the fav day.
+            else if (candiesCountPrefixSum[favType] < favDay+1) {
                 ans[i] = false;
             } 
 
-            // Candies are less, so all the fav candies are consumed before the fav day.
-            else if (candiesCountPrefixSum[favType] < favDay + 1) { 
-                ans[i] = false;
-            } else {
+            // The only remaining case will give us 'true'
+            else {
                 ans[i] = true;
             }
         }
+
         return ans;
     }
 }
