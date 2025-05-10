@@ -5,16 +5,16 @@ If it doesn't exist, return -1 for this number. */
 static int[] NGEL (int[] arr) {
     Stack<Integer> stack = new Stack<>();
     int n = arr.length;
-    int[] ans = new int[n];
+    int[] NGEL = new int[n];
         
     for (int i = 0; i < n; i++) {
         while(!stack.isEmpty() && stack.peek() <= arr[i]) {
             stack.pop();
         }
         if (stack.isEmpty()) {
-            ans[i] = -1;
+            NGEL[i] = -1;
         } else {
-            ans[i] = stack.peek();
+            NGEL[i] = stack.peek();
         }
         stack.push(arr[i]);
     }
