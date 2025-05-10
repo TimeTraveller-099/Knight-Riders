@@ -1,4 +1,4 @@
-private static int[] NSEL (int[] arr) {
+private static int[] NSEL(int[] arr) {
     Stack<Integer> stack = new Stack<>();
     int n = arr.length;
     int[] NSEL = new int[n];
