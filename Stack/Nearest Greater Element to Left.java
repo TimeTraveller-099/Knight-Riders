@@ -1,4 +1,4 @@
-private static int[] NGEL (int[] arr) {
+private static int[] NGEL(int[] arr) {
     Stack<Integer> stack = new Stack<>();
     int n = arr.length;
     int[] NGEL = new int[n];
