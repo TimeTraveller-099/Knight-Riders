@@ -14,5 +14,6 @@ private static int[] NSEL(int[] arr) {
         }
         stack.push(arr[i]);
     }
+    
     return NSEL;
 }
