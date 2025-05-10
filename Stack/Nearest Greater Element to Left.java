@@ -14,6 +14,6 @@ private static int[] NGEL (int[] arr) {
         }
         stack.push(arr[i]);
     }
-
-    return ans;
+    
+    return NGEL;
 }
